@@ -22,7 +22,7 @@ urlpatterns = patterns(
     url(r'^$', 'items.views.inventory_list', name="start"),
     url(r'^A/(?P<encoded_uuid>[a-zA-Z0-9_-]+)/?$', items.views.dispatch_encoded_uuids, name='dispatch_encoded_uuids'),
     url(r'^items/', include('items.urls', 'items')),
-    url(r'^photologue/', include('photologue.urls')),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 # Will only work on development serving via manage.py runserver
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
